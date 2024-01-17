@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.pro.managmentstudent.ui.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_lessonFragment2"
+            app:destination="@id/lessonFragment2" />
+        <action
+            android:id="@+id/action_mainFragment_to_studentFragment"
+            app:destination="@id/studentFragment" />
+        <argument
+            android:name="lesson_data"
+            app:argType="com.pro.managmentstudent.models.Lesson"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/lessonFragment2"
+        android:name="com.pro.managmentstudent.ui.LessonFragment"
+        android:label="fragment_lesson"
+        tools:layout="@layout/fragment_lesson" >
+        <action
+            android:id="@+id/action_lessonFragment2_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addStudentFragment"
+        android:name="com.pro.managmentstudent.ui.AddStudentFragment"
+        android:label="fragment_add_student"
+        tools:layout="@layout/fragment_add_student" >
+        <action
+            android:id="@+id/action_addStudentFragment_to_studentFragment"
+            app:destination="@id/studentFragment"
+            app:popUpTo="@id/addStudentFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/studentFragment"
+        android:name="com.pro.managmentstudent.ui.StudentFragment"
+        android:label="fragment_student"
+        tools:layout="@layout/fragment_student" >
+        <action
+            android:id="@+id/action_studentFragment_to_addStudentFragment"
+            app:destination="@id/addStudentFragment" />
+        <argument
+            android:name="student_data"
+            app:argType="com.pro.managmentstudent.models.Student"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_studentFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.pro.managmentstudent.ui.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_addStudentFragment"
+            app:destination="@id/addStudentFragment" />
+        <argument
+            android:name="search_data"
+            app:argType="com.pro.managmentstudent.models.Student"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+</navigation>

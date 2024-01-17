@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ManagmentStudent</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="toolbar_main">مدیریت دانشجو ها</string>
+
+
+    <string-array name="Languages">
+        <item>کارآموزی</item>
+        <item>پروژه</item>
+    </string-array>
+</resources>
